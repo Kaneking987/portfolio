@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mes Projets - Henry Mendes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Surcharge pour la section Projets */
+    #projets.section {
+      height: auto !important;
+      min-height: 0 !important;
+      margin-top: 120px;
+    }
+    .projects-container {
+      max-width: 1200px;
+      margin: 0 auto 80px auto;
+      padding: 20px;
+    }
+    .project-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      margin-bottom: 80px;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 8px;
+    }
+    .project-item:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+    .project-image {
+      flex: 1;
+      max-width: 400px;
+    }
+    .project-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+    .project-description {
+      flex: 1;
+      color: #fff;
+    }
+    .project-description h3 {
+      font-size: 1.8rem;
+      margin-bottom: 20px; /* Augmentation de l'espacement avec le paragraphe */
+    }
+    .project-description p {
+      font-size: 1rem; /* Taille de texte réduite */
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .project-description .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background: rgba(0, 0, 0, 0.3);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 4px;
+      position: relative;
+      transition: transform 0.3s ease, background 0.3s ease;
+      overflow: hidden;
+    }
+    .project-description .btn::after {
+      content: '→';
+      position: absolute;
+      right: -30px;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0;
+      transition: right 0.3s ease, opacity 0.3s ease;
+    }
+    .project-description .btn:hover {
+      transform: translateX(-10px);
+      background: rgba(0, 0, 0, 0.5);
+    }
+    .project-description .btn:hover::after {
+      right: 10px;
+      opacity: 1;
+    }
+    /* Responsive : passage en colonne sur mobile */
+    @media (max-width: 768px) {
+      .project-item {
+        flex-direction: column;
+        text-align: center;
+      }
+      .project-item:nth-child(even) {
+        flex-direction: column;
+      }
+      .project-image,
+      .project-description {
+        max-width: 100%;
+        flex: unset;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation fixe translucide -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html#profil">Profil</a></li>
+        <li><a href="index.html#projets" class="active">Projets</a></li>
+        <li><a href="index.html#competences">Compétences</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contenu principal des projets -->
+  <div class="sections">
+    <section class="section" id="projets">
+      <h2>Mes Projets</h2>
+      <p>
+        Découvrez ici mes différents projets réalisés en développement web, cybersécurité et gestion de bases de données. 
+        Chaque projet illustre mon engagement pour l'innovation et la sécurité numérique.
+      </p>
+
+      <div class="projects-container">
+        <!-- Projet 1 : texte à gauche, image à droite -->
+        <div class="project-item">
+          <div class="project-description">
+            <h3>Développement Web Innovant</h3>
+            <p>
+              Application web moderne optimisée pour l'expérience utilisateur et la sécurisation des échanges de données. 
+              Ce projet démontre mes compétences en HTML, CSS, JavaScript et en intégration de solutions back-end.
+            </p>
+            <a class="btn" href="#">En savoir plus</a>
+          </div>
+          <div class="project-image">
+            <img src="C:\Users\henry\Downloads\portfolio\photo\tendances-developpement-web-2024-ib-cegos-1.jpg" alt="Développement Web Innovant">
+          </div>
+        </div>
+
+        <!-- Projet 2 : image à gauche, texte à droite -->
+        <div class="project-item">
+          <div class="project-description">
+            <h3>Analyse en Cybersécurité</h3>
+            <p>
+              Projet dédié à l'analyse des vulnérabilités et à la mise en place de solutions de défense avancées. 
+              Une démarche proactive pour identifier et sécuriser les failles potentielles.
+            </p>
+            <a class="btn" href="#">En savoir plus</a>
+          </div>
+          <div class="project-image">
+            <img src="C:\Users\henry\Downloads\portfolio\photo\adobestock_630425270-scaled.jpeg" alt="Analyse en Cybersécurité">
+          </div>
+        </div>
+
+        <!-- Projet 3 : texte à gauche, image à droite -->
+        <div class="project-item">
+          <div class="project-description">
+            <h3>Gestion de Bases de Données</h3>
+            <p>
+              Implémentation d'une base de données sécurisée et performante pour la gestion d'informations sensibles. 
+              Ce projet illustre mon expertise en SQL et ma capacité à structurer et protéger les données.
+            </p>
+            <a class="btn" href="#">En savoir plus</a>
+          </div>
+          <div class="project-image">
+            <img src="C:\Users\henry\Downloads\portfolio\photo\gestion-de-base-de-donnees-clients.jpg" alt="Gestion de Bases de Données">
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Henry Mendes. Tous droits réservés.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

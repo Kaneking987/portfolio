@@ -1,0 +1,197 @@
+/* Base & Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  background: linear-gradient(to bottom, #0a0a23, #1a1a2e, #252525, black);
+  transition: background 0.5s ease;
+}
+
+/* Navigation */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3); /* Plus translucide */
+  backdrop-filter: blur(8px); /* Effet de flou pour plus de transparence */
+  padding: 10px 0;
+  z-index: 100;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: cyan;
+}
+
+/* Sections */
+.sections {
+  margin-top: 60px; /* Pour ne pas être caché par la nav fixe */
+}
+
+.section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Titres & Paragraphes */
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Bouton dans Projets */
+/* Bouton dans la section Projets */
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: rgba(0, 0, 0, 0.3); /* Couleur translucide */
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 4px;
+  position: relative;
+  transition: transform 0.3s ease, background 0.3s ease;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: '→';
+  position: absolute;
+  right: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: right 0.3s ease, opacity 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateX(-10px);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.btn:hover::after {
+  right: 10px;
+  opacity: 1;
+}
+
+/* Compétences */
+#competences .competences-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.competence {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.competence img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.competence img:hover {
+  transform: scale(1.2);
+}
+
+.competence span {
+  margin-top: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+/* Social links in Contact */
+.social-links {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: cyan;
+}
+
+.social-links img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #000;
+  font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 2rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+}
